@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:57:21 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/08 19:53:35 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/08 20:24:11 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ char *ft_strtrim(char const *s1, char const *set)
 		str = malloc (1);
 		if (!str)
 			return (NULL);
-		return (0);
 		str[0] = '\0';
 		return (str);
 	}
