@@ -6,25 +6,28 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:43:41 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/07 20:37:23 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/09 20:00:48 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int word_count(char const *s, char c);
+int		word_count(char const *s, char c);
+void	freestr(char **array, int j);
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	j;
 	unsigned int	strl;
 	char			**array;
-	
+	char			*s;
+
 	i = 0;
 	j = 0;
-	s = ft_strtrim(s, &c);
+	if (!s)
+		return (0);
 	array = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
 	if (!array)
 		return (NULL);
@@ -36,8 +39,16 @@ char **ft_split(char const *s, char c)
 			strl ++;
 			i ++;
 		}
-		array[j] = ft_substr(s, i - strl, strl); 
-		j ++;
+		if (strl !=0)
+		{
+			array[j] = ft_substr(s, i - strl, strl);
+			if (array[j] == 0)
+			{
+				freestr(array, j);
+				return (0);
+			}
+			j ++;
+		}
 		while (s[i] == c)
 			i ++;
 	}
@@ -45,37 +56,47 @@ char **ft_split(char const *s, char c)
 	return (array);
 }
 
-int word_count(char const *s, char c)
+int	word_count(char const *s, char c)
 {
-    int i;
-    int count;
+	int	i;
+	int	count;
 
-    i = 0;
-    count = 1;
-    while(s[i])
-    {
-        while (s[i] && s[i] != c)
-            i ++;
-        if (s[i] == c)
-            count ++;
-        while (s[i] == c)
-            i ++;
-    }
-    if (count == 1)
-        count ++;
-    return (count);
+	i = 0;
+	count = 1;
+	while (s[i])
+	{
+		while (s[i] && s[i] != c)
+			i ++;
+		if (s[i] == c)
+			count ++;
+		while (s[i] == c)
+			i ++;
+	}
+	return (count);
 }
 
+void	freestr(char **array, int j)
+{
+	int	i;
+
+	i = 0;
+	while (array[i] && i < j)
+	{
+		free(array[i]);
+		i ++;
+	}
+	free(array);
+}
+/*
  int	main(void)
  {
- 	const char *input1 = ",,,MON,TUE,,WED, ";
-     char **result1 = ft_split(input1, ',');
-   
-    printf("Result 1:\n");
-    for (int i = 0; result1[i] != 0; i++) {
-        printf("%s\n",  result1[0]);
-//      free(result1[i]);
+	char *s = ",,,MON,,TUE,WED,,,,,,";
+	char **result = ft_split(s, ',');
+
+    for (int i = 0; result[i] != 0; i++) {
+        printf("%s\n",  result[i]);
+      free(result[i]);
     }
-  //  free(result1);
+	free(result);
  	return (0);
- }
+}*/

@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:23:22 by amakela           #+#    #+#             */
-/*   Updated: 2023/10/31 12:23:25 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/09 18:23:01 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	ch;
 
+	ch = (char)c;
 	i = ft_strlen(s);
 	while (i >= 0)
-		if (s[i] != c)
+		if (s[i] != ch)
 			i --;
-	else if (s[i] == c)
+	else if (s[i] == ch)
 		return ((char *) &s[i]);
 	return (0);
 }
