@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:29:29 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/01 18:56:54 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/11 18:23:17 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,20 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (s1 == 0 && s2 == 0)
+		return (ft_strdup(""));
+	if (s1 == 0)
+		return (ft_strdup(s2));
+	if (s2 == 0)
+		return (ft_strdup(s1));
 	str = malloc (ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (NULL);
 	while (s1[i])
-	{
-		str[i] = s1[i];
-		i ++;
-	}
-	while (s2[i])
-	{
-		str[i] = s2[j];
-		i ++;
-		j ++;
-	}
+		str[i++] = s1[j++];
+	j = 0;
+	while (s2[j])
+		str[i++] = s2[j++];
 	str[i] = '\0';
 	return (str);
 }
-
