@@ -6,56 +6,30 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:43:41 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/10 19:25:24 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/14 13:44:23 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int		word_count(char const *s, char c);
-void	freestr(char **array, int j);
+static int		word_count(char const *s, char c);
+static char		**freestr(char **array, int j);
+static char		**fill_array(char **array, char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	strl;
 	char			**array;
 
-	i = 0;
-	j = 0;
 	if (!s)
 		return (0);
-	array = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
+	array = malloc(sizeof(char *) * (word_count(s, c) + 1));
 	if (!array)
 		return (NULL);
-	while (s[i])
-	{
-		strl = 0;
-		while (s[i] && s[i] != c)
-		{
-			strl ++;
-			i ++;
-		}
-		if (strl != 0)
-		{
-			array[j] = ft_substr(s, i - strl, strl);
-			if (array[j] == 0)
-			{
-				freestr(array, j);
-				return (0);
-			}
-			j ++;
-		}
-		while (s[i] && s[i] == c)
-			i ++;
-	}
-	array[j] = 0;
-	return (array);
+	return (fill_array(array, s, c));
 }
 
-int	word_count(char const *s, char c)
+static int	word_count(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -74,7 +48,36 @@ int	word_count(char const *s, char c)
 	return (count);
 }
 
-void	freestr(char **array, int j)
+static char	**fill_array(char **array, char const *s, char c)
+{
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	strl;
+
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		strl = 0;
+		while (s[i] && s[i] != c)
+		{
+			strl ++;
+			i ++;
+		}
+		if (strl != 0)
+		{
+			array[j++] = ft_substr(s, i - strl, strl);
+			if (array[j - 1] == 0)
+				return (freestr(array, j));
+		}
+		while (s[i] && s[i] == c)
+			i ++;
+	}
+	array[j] = 0;
+	return (array);
+}
+
+static char	**freestr(char **array, int j)
 {
 	int	i;
 
@@ -85,6 +88,7 @@ void	freestr(char **array, int j)
 		i ++;
 	}
 	free(array);
+	return (NULL);
 }
 /*
  int	main(void)
