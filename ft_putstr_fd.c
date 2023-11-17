@@ -6,17 +6,19 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:38:01 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/02 12:03:38 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/10 14:08:15 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
+	if (s == 0)
+		return ;
 	while (s[i])
 	{
 		write(fd, &s[i], 1);

@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:24:26 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/09 12:56:41 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/16 13:51:47 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		length;
+	size_t	length;
+	size_t	i;
 	char	ch;
-	int		i;
 
 	i = 0;
 	ch = (char)c;

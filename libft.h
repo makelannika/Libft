@@ -6,14 +6,13 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:44:38 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/16 16:04:43 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/17 17:54:04 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 

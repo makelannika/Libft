@@ -6,17 +6,19 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:44:40 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/02 10:49:52 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/10 14:07:58 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
+	if (s == 0)
+		return ;
 	while (s[i])
 	{
 		write(fd, &s[i], 1);

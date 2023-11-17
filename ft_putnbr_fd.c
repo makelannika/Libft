@@ -6,13 +6,13 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:55:03 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/02 12:55:16 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/08 19:10:50 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);
@@ -32,4 +32,3 @@ void ft_putnbr_fd(int n, int fd)
 		write(fd, &n, 1);
 	}
 }
-

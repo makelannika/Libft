@@ -6,14 +6,11 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:39:48 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/14 16:22:08 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:51:09 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-static int  overflow(int neg);
+static int	overflow(int neg);
 
 int	ft_atoi(const char *str)
 {
@@ -49,12 +46,3 @@ static int	overflow(int neg)
 		return (0);
 	return (-1);
 }
-/*
-int	main(void)
-{
-	const char	str[] = "0";
-
-	printf("%d\n", atoi(str));
-	printf("%d", ft_atoi(str));
-	return (0);
-}*/

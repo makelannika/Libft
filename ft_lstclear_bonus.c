@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:36:02 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/15 19:41:19 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:27:47 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *current;
-	t_list *prev;
+	t_list	*current;
+	t_list	*prev;
 
 	if (!lst || !del)
-	   return ;
+		return ;
 	current = *lst;
 	while (current != NULL)
 	{

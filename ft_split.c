@@ -6,12 +6,11 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:43:41 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/14 13:44:23 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:57:19 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int		word_count(char const *s, char c);
 static char		**freestr(char **array, int j);
@@ -90,16 +89,3 @@ static char	**freestr(char **array, int j)
 	free(array);
 	return (NULL);
 }
-/*
- int	main(void)
- {
-	char *s = "MON";
-	char **result = ft_split(s, ',');
-
-    for (int i = 0; result[i] != 0; i++) {
-        printf("%s\n",  result[i]);
-      free(result[i]);
-    }
-	free(result);
- 	return (0);
-}*/

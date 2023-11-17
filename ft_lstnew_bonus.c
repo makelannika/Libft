@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:37:17 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/15 19:14:06 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:32:22 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *new;
-	
+	t_list	*new;
+
 	new = malloc (sizeof(t_list));
 	if (!new)
 		return (NULL);
