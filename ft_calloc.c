@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:07:12 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/16 12:16:42 by amakela          ###   ########.fr       */
+/*   Updated: 2023/11/20 12:15:35 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	char	*ptr;
-	size_t	max;
 
-	max = -1;
-	if (size * count > max)
+	if (size != 0 && count > (SIZE_MAX / size))
+	{
 		return (NULL);
+	}
 	ptr = malloc (count * size);
 	if (!ptr)
 		return (NULL);
