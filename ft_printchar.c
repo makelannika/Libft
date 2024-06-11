@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 16:07:12 by amakela           #+#    #+#             */
-/*   Updated: 2023/11/24 15:26:24 by amakela          ###   ########.fr       */
+/*   Created: 2023/11/23 12:29:05 by amakela           #+#    #+#             */
+/*   Updated: 2024/01/01 18:29:01 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_printchar(char c)
 {
-	char	*ptr;
-
-	if (size != 0 && count > (SIZE_MAX / size))
-		return (NULL);
-	ptr = malloc (count * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, (count * size));
-	return (ptr);
+	return (write(1, &c, 1));
 }
