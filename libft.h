@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:44:38 by amakela           #+#    #+#             */
-/*   Updated: 2024/01/01 18:27:56 by amakela          ###   ########.fr       */
+/*   Updated: 2024/08/29 19:37:29 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_printchar(char c);
-int     ft_printf(const char *format, ...);
-int     ft_printhex(unsigned long nbr, char specifier, int *count);
-int     ft_printnbr(long nbr, int *count);
-int     ft_printstr(char *str);
-char    *get_next_line(int fd);
+int		ft_printf(const char *format, ...);
+int		ft_printhex(unsigned long nbr, char specifier, int *count);
+int		ft_printnbr(long nbr, int *count);
+int		ft_printstr(char *str);
+char	*get_next_line(int fd);
 
 #endif
